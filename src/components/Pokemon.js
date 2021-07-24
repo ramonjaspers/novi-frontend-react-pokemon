@@ -29,25 +29,26 @@ function Pokemon({ url }) {
     return (
         <>
             {pokemon &&
-                <>
+                <div class='pokemon'>
                     <h2>{pokemon.name}</h2>
                     <img
+                        class='pokemonImage'
                         alt='pokemon'
                         src={pokemon.sprites.front_default}
                     />
-                    <p><b>Abilities: </b></p>
-                    <ul>
+                    <span><b>Weight: </b>{pokemon.weight}</span>
+                    <span><b>Moves: </b>{pokemon.moves.length}</span>
+                    <span><b>Abilities: </b></span>
+                    <ul id='abilityList'>
                         {pokemon.abilities.map((ability) => {
                             return (
-                                <li key={`${ability.ability.name}-${pokemon.name}`}>
+                                <li class='ability' key={`${ability.ability.name}-${pokemon.name}`}>
                                     {ability.ability.name}
                                 </li>
                             )
                         })}
                     </ul>
-                    <p><b>Weight: </b>{pokemon.weight}</p>
-                    <p><b>Moves: </b>{pokemon.moves.length}</p>
-                </>
+                </div>
             }
         </>
     );

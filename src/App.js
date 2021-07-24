@@ -37,7 +37,7 @@ function App() {
 
   return (
     <GlobalContext.Provider value={globalState}>
-      {data &&
+      {data.results &&
         <>
           <div id='buttonWrapper'>
             <Button
@@ -53,26 +53,27 @@ function App() {
               Volgende
             </Button>
           </div>
-
-          {data.results &&
-            data.results.map((pokemon) => {
+          <div id='pokemonWrapper'>
+            {data.results.map((pokemon) => {
               return <Pokemon key={pokemon.name} url={pokemon.url} />
-            })
-          }
+            })}
+          </div>
         </>
       }
-      {globalState.loading &&
-        <ClipLoader color={'red'} loading={globalState.loading} size={150} />
-      }
-      {globalState.error &&
-        <div id='error'>
-          <h2>Missed the pokeball to catch pokemons.</h2>
-          <br />
-          <h3>Please try again by refreshing the page.</h3>
-          <br />
-          <p>If this keeps happening please report this to pokemaster@pikapika.poke</p>
-        </div>
-      }
+      <div id='notice'>
+        {globalState.loading &&
+          <ClipLoader color={'red'} loading={globalState.loading} size={150} />
+        }
+        {globalState.error &&
+          <>
+            <h2>Missed the pokeball to catch pokemons.</h2>
+            <br />
+            <h3>Please try again by refreshing the page.</h3>
+            <br />
+            <h4>If this keeps happening please report this to pokemaster@pikapika.poke</h4>
+          </>
+        }
+      </div>
     </GlobalContext.Provider>
   );
 }
