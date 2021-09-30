@@ -1,0 +1,78 @@
+body {
+  background-color: rgb(255, 238, 0);
+}
+
+#pokemonWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 200px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.pokemonImage {
+  width: 100%;
+}
+
+#abilityList {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.ability {
+  border: 1px solid black;
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  background: rgb(231, 231, 231);
+  border-radius: 4px;
+  color: black;
+  padding: 5px 8px 5px 8px;
+  width: 100px;
+  margin-bottom: 8px;
+}
+
+#notice {
+  color: red;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  width: 100%;
+}
+
+#notice > h2,
+h4 {
+  margin: 0;
+}
+
+#buttonWrapper {
+  text-align: center;
+}
+
+.navButton {
+  border: 1px solid black;
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 8px 16px;
+  width: 100px;
+  margin: 2px;
+}
+
+.navButton:disabled {
+  background: rgb(138, 138, 138);
+}
